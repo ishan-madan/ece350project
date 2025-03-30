@@ -24,8 +24,11 @@
  *
  **/
 
-module Wrapper (clock, reset);
-	input clock, reset;
+module Wrapper (input CLK100MHZ, input BTNU, input [15:0] SW, output reg [15:0] LED);
+
+	wire clock, reset;
+	assign clock = CLK100MHZ;
+	assign reset = BTNU;
 
 	wire rwe, mwe;
 	wire[4:0] rd, rs1, rs2;
@@ -35,7 +38,7 @@ module Wrapper (clock, reset);
 
 
 	// ADD YOUR MEMORY FILE HERE
-	localparam INSTR_FILE = "positive_no_bypass";
+	localparam INSTR_FILE = "testAssembly.mem";
 	
 	// Main Processing Unit
 	processor CPU(.clock(clock), .reset(reset), 
