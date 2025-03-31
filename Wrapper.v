@@ -24,11 +24,19 @@
  *
  **/
 
-module Wrapper (input CLK100MHZ, input BTNU, input [15:0] SW, output reg [15:0] LED);
+module Wrapper (input CLK100MHZ, input BTNU, input BTNR, input [15:0] SW, output [15:0] LED);
 
 	wire clock, reset;
-	assign clock = CLK100MHZ;
+	wire clk_50mhz;
+    wire locked;
+    assign clock = clk_50mhz;
 	assign reset = BTNU;
+	clk_wiz_0 pll(
+        .clk_out1(clk_50mhz),
+        .reset(1'd0),
+        .locked(locked),
+        .clk_in1(CLK100MHZ)
+    );
 
 	wire rwe, mwe;
 	wire[4:0] rd, rs1, rs2;
@@ -38,7 +46,7 @@ module Wrapper (input CLK100MHZ, input BTNU, input [15:0] SW, output reg [15:0] 
 
 
 	// ADD YOUR MEMORY FILE HERE
-	localparam INSTR_FILE = "testAssembly.mem";
+	localparam INSTR_FILE = "testAssembly";
 	
 	// Main Processing Unit
 	processor CPU(.clock(clock), .reset(reset), 
@@ -73,6 +81,16 @@ module Wrapper (input CLK100MHZ, input BTNU, input [15:0] SW, output reg [15:0] 
 		.wEn(mwe), 
 		.addr(memAddr[11:0]), 
 		.dataIn(memDataIn), 
-		.dataOut(memDataOut));
-
+		.dataOut(memDataOut_temp));
+		
+	reg[31:0] button_press;
+	wire read_button;
+	assign read_button = (memAddr[11:0] == 12'd7);
+	always @(posedge clock) begin
+	   button_press[31:1] <= {31'b0, BTNR};
+	end
+	assign memDataOut = (memAddr[11:0] == 12'd7) ? button_press : memDataOut_temp;
+    
+    assign LED[0] = memDataIn[0];
+    
 endmodule
