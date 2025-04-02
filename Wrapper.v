@@ -24,7 +24,7 @@
  *
  **/
 
-module Wrapper (input CLK100MHZ, input BTNU, input BTNR, input [15:0] SW, output [15:0] LED);
+module Wrapper (input CLK100MHZ, input BTNU, input BTNR, input [15:0] SW, output reg [15:0] LED, output Servo1);
 
 	wire clock, reset;
 	wire clk_50mhz;
@@ -87,10 +87,17 @@ module Wrapper (input CLK100MHZ, input BTNU, input BTNR, input [15:0] SW, output
 	wire read_button;
 	assign read_button = (memAddr[11:0] == 12'd7);
 	always @(posedge clock) begin
-	   button_press[31:1] <= {31'b0, BTNR};
+	   button_press[31:0] <= {31'b0, BTNR};
 	end
 	assign memDataOut = (memAddr[11:0] == 12'd7) ? button_press : memDataOut_temp;
     
-    assign LED[0] = memDataIn[0];
+    
+    ServoController servoCont(clk_50mhz, BTNR, Servo1);
+    
+    always @(posedge clock) begin
+        if (memAddr[11:0] == 12'd6) begin
+	       LED[0] <= memDataIn[0];
+	   end
+	end
     
 endmodule
