@@ -5,6 +5,7 @@
 # r3 is servo 1 timer
 # r4 is servo 2 timer
 # r5 is servo 3 timer
+# r6 is out duty cycle setting register
 
 # mem address 7 is for servo 1 button
 # mem address 8 is for servo 2 button
@@ -21,9 +22,14 @@ nop
 nop
 
 # checking if servo 1 button is pressed
-beq $r3, $r0, check_servo_1_button
+bne $r3, $r0, servo_1_button_checked
 nop
 nop
+
+j check_servo_1_button
+nop
+nop
+
 
 servo_1_button_checked:
 # check to see if there is still time left on the servo
@@ -31,13 +37,11 @@ bne $r3, $r0, subtract_servo_1_time
 nop
 nop
 
-# check to see if the timer on the servo is equal to 0
-servo_1_time_checked:
-beq $r3, $r0, turn_off_servo_1
+j turn_off_servo_1
 nop
 nop
 
-servo_1_timer_off:
+servo_1_time_checked:
 #insert code here to check the other servos
 
 
@@ -60,22 +64,25 @@ nop
 addi $r2, $r0, 1
 nop
 nop
-beq $r1, $r2, set_servo_1_timer
+bne $r1, $r2, servo_1_button_checked
 nop
 nop
-j servo_1_button_checked
+j set_servo_1_timer
 
 
 set_servo_1_timer:
 nop
 nop
-addi $r3, $r1, $r0
+addi $r3, $r1, 1
 nop
 nop
-sll $r3, $r3, 28
+sll $r3, $r3, 22
 nop
 nop
-sw $r1, 11($r0)
+addi $r6, $r0, 114
+nop
+nop
+sw $r6, 11($r0)
 nop
 nop
 j servo_1_button_checked
@@ -96,7 +103,10 @@ j servo_1_time_checked
 turn_off_servo_1:
 nop
 nop
-sw $r0, 11($r0)
+addi $r6, $r0, 40
 nop
 nop
-j servo_1_timer_off
+sw $r6, 11($r0)
+nop
+nop
+j servo_1_time_checked
