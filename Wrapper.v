@@ -24,7 +24,7 @@
  *
  **/
 
-module Wrapper (input CLK100MHZ, input BTNU, input BTNR, input [15:0] SW, output reg [15:0] LED, output Servo1);
+module Wrapper (input CLK100MHZ, input BTNU, input BTNL, input BTNR, input [15:0] SW, output reg [15:0] LED, output Servo1, output Servo2);
 
 	wire clock, reset;
 	wire clk_50mhz;
@@ -46,7 +46,7 @@ module Wrapper (input CLK100MHZ, input BTNU, input BTNR, input [15:0] SW, output
 
 
 	// ADD YOUR MEMORY FILE HERE
-	localparam INSTR_FILE = "testAssembly";
+	localparam INSTR_FILE = "twoServo";
 	
 	// Main Processing Unit
 	processor CPU(.clock(clock), .reset(reset), 
@@ -83,29 +83,49 @@ module Wrapper (input CLK100MHZ, input BTNU, input BTNR, input [15:0] SW, output
 		.dataIn(memDataIn), 
 		.dataOut(memDataOut_temp));
 		
-	reg[31:0] button_press;
+	reg[31:0] button_press_1, button_press_2;
+	
 	reg[9:0] servo1_duty_cycle;
-	wire read_button;
-	assign read_button = (memAddr[11:0] == 12'd7);
+	reg[9:0] servo2_duty_cycle;
+	
+	wire read_button_1, read_button_2;
+	
+	assign read_button_1 = (memAddr[11:0] == 12'd7);
+	assign read_button_2 = (memAddr[11:0] == 12'd8);
+	
 	always @(posedge clock) begin
-        if (memAddr[11:0] == 12'd7) begin
-           button_press[31:0] <= {31'b0, BTNR};
+        if (read_button_1) begin
+           button_press_1[31:0] <= {31'b0, BTNR};
+        end
+        
+        if (read_button_2) begin
+           button_press_2[31:0] <= {31'b0, BTNL};
         end
         
         if (memAddr[11:0] == 12'd11 && mwe == 1'd1) begin
             servo1_duty_cycle <= memDataIn[9:0];
         end
+        
+        if (memAddr[11:0] == 12'd12 && mwe == 1'd1) begin
+            servo2_duty_cycle <= memDataIn[9:0];
+        end
 	end
-	assign memDataOut = (memAddr[11:0] == 12'd7) ? button_press : memDataOut_temp;
+	
+	// intercepts the real value and forces our own value in
+	assign memDataOut = (memAddr[11:0] == 12'd7) ? button_press_1 : 
+	                    (memAddr[11:0] == 12'd8) ? button_press_2 : 
+	                    memDataOut_temp;
+
     
     
-    ServoController servoCont(clk_50mhz, servo1_duty_cycle, Servo1);
+    ServoController servoCont1(clk_50mhz, servo1_duty_cycle, Servo1);
+    ServoController servoCont2(clk_50mhz, servo2_duty_cycle, Servo2);
     
     always @(posedge clock) begin
 //        if (memAddr[11:0] == 12'd6) begin
 //	       LED[0] <= memDataIn[0];
 //	   end
-        LED[9:0] <= servo1_duty_cycle;
+        LED[9:0] <= servo2_duty_cycle;
 	end
     
 endmodule
