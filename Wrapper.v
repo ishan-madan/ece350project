@@ -84,20 +84,28 @@ module Wrapper (input CLK100MHZ, input BTNU, input BTNR, input [15:0] SW, output
 		.dataOut(memDataOut_temp));
 		
 	reg[31:0] button_press;
+	reg[9:0] servo1_duty_cycle;
 	wire read_button;
 	assign read_button = (memAddr[11:0] == 12'd7);
 	always @(posedge clock) begin
-	   button_press[31:0] <= {31'b0, BTNR};
+        if (memAddr[11:0] == 12'd7) begin
+           button_press[31:0] <= {31'b0, BTNR};
+        end
+        
+        if (memAddr[11:0] == 12'd11 && mwe == 1'd1) begin
+            servo1_duty_cycle <= memDataIn[9:0];
+        end
 	end
 	assign memDataOut = (memAddr[11:0] == 12'd7) ? button_press : memDataOut_temp;
     
     
-    ServoController servoCont(clk_50mhz, BTNR, Servo1);
+    ServoController servoCont(clk_50mhz, servo1_duty_cycle, Servo1);
     
     always @(posedge clock) begin
-        if (memAddr[11:0] == 12'd6) begin
-	       LED[0] <= memDataIn[0];
-	   end
+//        if (memAddr[11:0] == 12'd6) begin
+//	       LED[0] <= memDataIn[0];
+//	   end
+        LED[9:0] <= servo1_duty_cycle;
 	end
     
 endmodule

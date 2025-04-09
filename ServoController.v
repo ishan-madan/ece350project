@@ -1,13 +1,13 @@
 module ServoController(
     input        clk, 		    // System Clock Input 100 Mhz
-    input button,	    // Position control switches
-//    input [9:0] duty_cycle, 
+//    input button,	    // Position control switches
+    input [9:0] duty_cycle, 
     output       servoSignal    // Signal to the servo
     );	
         
-    wire[9:0] duty_cycle;
+//    wire[9:0] duty_cycle;
     
-    assign duty_cycle = (button * 72) + 40;
+//    assign duty_cycle = (button * 72) + 40;
     
     PWMSerializer #(.PERIOD_WIDTH_NS(20000000), .SYS_FREQ_MHZ(50)) servoSer(clk, 1'b0, duty_cycle, servoSignal);
     
