@@ -24,7 +24,7 @@
  *
  **/
 
-module Wrapper (input CLK100MHZ, input BTNU, input BTNL, input BTNR, input BTND, input [15:0] SW, output reg [15:0] LED, output Servo1, output Servo2, output Servo3);
+module Wrapper (input CLK100MHZ, input BTNU, input button1, input button2, input button3, input [15:0] SW, output reg [15:0] LED, output Servo1, output Servo2, output Servo3);
 
 	wire clock, reset;
 	wire clk_50mhz;
@@ -95,15 +95,15 @@ module Wrapper (input CLK100MHZ, input BTNU, input BTNL, input BTNR, input BTND,
 	
 	always @(posedge clock) begin
         if (read_button_1) begin
-           button_press_1[31:0] <= {31'b0, BTNR};
+           button_press_1[31:0] <= {31'b0, button1};
         end
         
         if (read_button_2) begin
-           button_press_2[31:0] <= {31'b0, BTNL};
+           button_press_2[31:0] <= {31'b0, button2};
         end
 
         if (read_button_3) begin
-           button_press_3[31:0] <= {31'b0, BTND};
+           button_press_3[31:0] <= {31'b0, button3};
         end
         
         if (memAddr[11:0] == 12'd11 && mwe == 1'd1) begin

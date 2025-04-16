@@ -163,7 +163,8 @@ nop
 sll $r3, $r3, 22
 nop
 nop
-addi $r6, $r0, 114
+# 77 used to be 114
+addi $r6, $r0, 77
 nop
 nop
 sw $r6, 11($r0)
@@ -181,7 +182,8 @@ nop
 sll $r4, $r4, 22
 nop
 nop
-addi $r7, $r0, 114
+# 77 used to be 114
+addi $r7, $r0, 77
 nop
 nop
 sw $r7, 12($r0)
@@ -199,7 +201,8 @@ nop
 sll $r5, $r5, 22
 nop
 nop
-addi $r8, $r0, 114
+# 77 used to be 114
+addi $r8, $r0, 77
 nop
 nop
 sw $r8, 13($r0)
