@@ -24,7 +24,7 @@
  *
  **/
 
-module Wrapper (input CLK100MHZ, input BTNU, input button1, input button2, input button3, input [15:0] SW, output reg [15:0] LED, output Servo1, output Servo2, output Servo3);
+module Wrapper (input CLK100MHZ, input BTNU, input button1_short, input button2_short, input button3_short, input button1_long, input button2_long, input button3_long, input [15:0] SW, output reg [15:0] LED, output Servo1, output Servo2, output Servo3);
 
 	wire clock, reset;
 	wire clk_50mhz;
@@ -46,7 +46,7 @@ module Wrapper (input CLK100MHZ, input BTNU, input button1, input button2, input
 
 
 	// ADD YOUR MEMORY FILE HERE
-	localparam INSTR_FILE = "threeServo";
+	localparam INSTR_FILE = "threeServo_fixed_timing";
 	
 	// Main Processing Unit
 	processor CPU(.clock(clock), .reset(reset), 
@@ -83,27 +83,42 @@ module Wrapper (input CLK100MHZ, input BTNU, input button1, input button2, input
 		.dataIn(memDataIn), 
 		.dataOut(memDataOut_temp));
 		
-	reg[31:0] button_press_1, button_press_2, button_press_3;
+	reg[31:0] button_press_1, button_press_2, button_press_3, button_press_4, button_press_5, button_press_6;
 	
 	reg[9:0] servo1_duty_cycle, servo2_duty_cycle, servo3_duty_cycle;
 	
-	wire read_button_1, read_button_2, read_button_3;
+	wire read_button_1, read_button_2, read_button_3, read_button_4, read_button_5, read_button_6;
 	
 	assign read_button_1 = (memAddr[11:0] == 12'd7);
 	assign read_button_2 = (memAddr[11:0] == 12'd8);
 	assign read_button_3 = (memAddr[11:0] == 12'd9);
+	assign read_button_4 = (memAddr[11:0] == 12'd14);
+	assign read_button_5 = (memAddr[11:0] == 12'd16);
+	assign read_button_6 = (memAddr[11:0] == 12'd18);
 	
 	always @(posedge clock) begin
         if (read_button_1) begin
-           button_press_1[31:0] <= {31'b0, button1};
+           button_press_1[31:0] <= {31'b0, button1_short};
         end
         
         if (read_button_2) begin
-           button_press_2[31:0] <= {31'b0, button2};
+           button_press_2[31:0] <= {31'b0, button2_short};
         end
 
         if (read_button_3) begin
-           button_press_3[31:0] <= {31'b0, button3};
+           button_press_3[31:0] <= {31'b0, button3_short};
+        end
+        
+        if (read_button_4) begin
+           button_press_4[31:0] <= {31'b0, button1_long};
+        end
+        
+        if (read_button_5) begin
+           button_press_5[31:0] <= {31'b0, button2_long};
+        end
+
+        if (read_button_6) begin
+           button_press_6[31:0] <= {31'b0, button3_long};
         end
         
         if (memAddr[11:0] == 12'd11 && mwe == 1'd1) begin
@@ -123,6 +138,9 @@ module Wrapper (input CLK100MHZ, input BTNU, input button1, input button2, input
 	assign memDataOut = (memAddr[11:0] == 12'd7) ? button_press_1 : 
 	                    (memAddr[11:0] == 12'd8) ? button_press_2 :
 	                    (memAddr[11:0] == 12'd9) ? button_press_3 : 
+	                    (memAddr[11:0] == 12'd14) ? button_press_4 : 
+	                    (memAddr[11:0] == 12'd16) ? button_press_5 : 
+	                    (memAddr[11:0] == 12'd18) ? button_press_6 : 
 	                    memDataOut_temp;
 
     
