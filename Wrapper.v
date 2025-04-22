@@ -24,7 +24,7 @@
  *
  **/
 
-module Wrapper (input CLK100MHZ, input BTNU, input button1_short, input button2_short, input button3_short, input button1_long, input button2_long, input button3_long, input [15:0] SW, output reg [15:0] LED, output Servo1, output Servo2, output Servo3);
+module Wrapper (input CLK100MHZ, input BTNU, input button1_short, input button2_short, input button3_short, input button1_long, input button2_long, input button3_long, output reg [15:0] LED, output Servo1, output Servo2, output Servo3);
 
 	wire clock, reset;
 	wire clk_50mhz;
