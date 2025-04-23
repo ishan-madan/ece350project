@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Wed Apr 23 12:15:59 2025
+| Date         : Wed Apr 23 12:40:28 2025
 | Host         : P1-05 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file Wrapper_utilization_synth.rpt -pb Wrapper_utilization_synth.pb
 | Design       : Wrapper
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             | 3509 |     0 |          0 |     63400 |  5.53 |
-|   LUT as Logic          | 3509 |     0 |          0 |     63400 |  5.53 |
+| Slice LUTs*             | 3507 |     0 |          0 |     63400 |  5.53 |
+|   LUT as Logic          | 3507 |     0 |          0 |     63400 |  5.53 |
 |   LUT as Memory         |    0 |     0 |          0 |     19000 |  0.00 |
-| Slice Registers         | 1892 |     0 |          0 |    126800 |  1.49 |
-|   Register as Flip Flop | 1892 |     0 |          0 |    126800 |  1.49 |
+| Slice Registers         | 1889 |     0 |          0 |    126800 |  1.49 |
+|   Register as Flip Flop | 1889 |     0 |          0 |    126800 |  1.49 |
 |   Register as Latch     |    0 |     0 |          0 |    126800 |  0.00 |
 | F7 Muxes                |    8 |     0 |          0 |     31700 |  0.03 |
 | F8 Muxes                |    0 |     0 |          0 |     15850 |  0.00 |
@@ -57,7 +57,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 1419  |          Yes |           - |        Reset |
 | 1     |          Yes |         Set |            - |
-| 472   |          Yes |       Reset |            - |
+| 469   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -149,17 +149,17 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     | 1881 |                 LUT |
+| LUT6     | 1879 |                 LUT |
 | FDCE     | 1419 |        Flop & Latch |
-| LUT2     |  859 |                 LUT |
-| FDRE     |  472 |        Flop & Latch |
+| LUT2     |  856 |                 LUT |
+| FDRE     |  469 |        Flop & Latch |
 | LUT5     |  389 |                 LUT |
-| LUT4     |  388 |                 LUT |
+| LUT4     |  389 |                 LUT |
 | CARRY4   |  234 |          CarryLogic |
 | LUT3     |  170 |                 LUT |
 | LUT1     |  124 |                 LUT |
-| OBUFT    |   11 |                  IO |
-| OBUF     |   10 |                  IO |
+| OBUFT    |   12 |                  IO |
+| OBUF     |    9 |                  IO |
 | MUXF7    |    8 |               MuxFx |
 | DSP48E1  |    8 |    Block Arithmetic |
 | IBUF     |    7 |                  IO |

@@ -137,7 +137,6 @@ module Wrapper (input CLK100MHZ, input BTNU, input button1_short, input button2_
         
         if (memAddr[11:0] == 12'd20 && mwe == 1'd1) begin
             tone <= memDataIn[3:0];
-            ena <= (tone == 4'd15) ? 0 : 1;
         end
 	end
 	
@@ -155,14 +154,13 @@ module Wrapper (input CLK100MHZ, input BTNU, input button1_short, input button2_
     ServoController servoCont1(clk_50mhz, servo1_duty_cycle, Servo1);
     ServoController servoCont2(clk_50mhz, servo2_duty_cycle, Servo2);
     ServoController servoCont3(clk_50mhz, servo3_duty_cycle, Servo3);
-    AudioController audioCont(clk_50mhz, tone, ena, audioOut, audioEn);
+    AudioController audioCont(clk_50mhz, tone, audioOut, audioEn);
     
     always @(posedge clock) begin
 //        if (memAddr[11:0] == 12'd6) begin
 //	       LED[0] <= memDataIn[0];
 //	   end
         LED[3:0] <= tone;
-        LED[15] <= ena;
         
 	end
     

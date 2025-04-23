@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date             : Wed Apr 23 12:17:59 2025
+| Date             : Wed Apr 23 12:42:34 2025
 | Host             : P1-05 running 64-bit major release  (build 9200)
 | Command          : report_power -file Wrapper_power_routed.rpt -pb Wrapper_power_summary_routed.pb -rpx Wrapper_power_routed.rpx
 | Design           : Wrapper
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 0.238        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.141        |
+| Dynamic (W)              | 0.140        |
 | Device Static (W)        | 0.098        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 83.9         |
@@ -53,13 +53,13 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.005 |        8 |       --- |             --- |
-| Slice Logic    |     0.009 |     5991 |       --- |             --- |
-|   LUT as Logic |     0.009 |     3421 |     63400 |            5.40 |
+| Slice Logic    |     0.009 |     5988 |       --- |             --- |
+|   LUT as Logic |     0.009 |     3419 |     63400 |            5.39 |
 |   CARRY4       |    <0.001 |      234 |     15850 |            1.48 |
-|   Register     |    <0.001 |     1896 |    126800 |            1.50 |
+|   Register     |    <0.001 |     1897 |    126800 |            1.50 |
 |   F7/F8 Muxes  |    <0.001 |        8 |     63400 |            0.01 |
 |   Others       |     0.000 |       42 |       --- |             --- |
-| Signals        |     0.012 |     5399 |       --- |             --- |
+| Signals        |     0.011 |     5395 |       --- |             --- |
 | Block RAM      |     0.003 |      3.5 |       135 |            2.59 |
 | MMCM           |     0.106 |        1 |         6 |           16.67 |
 | DSPs           |     0.003 |        8 |       240 |            3.33 |
@@ -75,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.048 |       0.032 |      0.015 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.047 |       0.032 |      0.015 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.077 |       0.059 |      0.018 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -149,8 +149,8 @@ Table of Contents
 +---------------------------+-----------+
 | Name                      | Power (W) |
 +---------------------------+-----------+
-| Wrapper                   |     0.141 |
-|   CPU                     |     0.019 |
+| Wrapper                   |     0.140 |
+|   CPU                     |     0.018 |
 |     IF_latch              |     0.005 |
 |       register[31]        |     0.004 |
 |     aluResult_reg         |     0.001 |

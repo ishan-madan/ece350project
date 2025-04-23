@@ -58,14 +58,13 @@
 module AudioController(
     input        clk, 		// System Clock Input 100 Mhz
     input[3:0]   tone,	// Tone control switches
-    input ena,
     output       audioOut,	// PWM signal to the audio jack	
     output       audioEn);	// Audio Enable
 
 	localparam MHz = 1000000;
 	localparam SYSTEM_FREQ = 100*MHz; // System clock frequency
 
-	assign audioEn = ena;  // Enable Audio Output
+	assign audioEn = (tone == 4'b1111) ? 0 : 1;  // Enable Audio Output
 
 	// Initialize the frequency array. FREQs[0] = 261
 	reg[10:0] FREQs[0:15];
@@ -125,7 +124,7 @@ module AudioController(
 
 //	wire [9:0] duty_cycle_total = (duty_cycle + duty_cycle_2)/2;
 
-	PWMSerializer serializer1(
+	PWMSerializer #(.SYS_FREQ_MHZ(50)) serializer1(
 		.clk(clk),              // System Clock
 		.reset(1'b0),            // Reset the counter
 		.duty_cycle(duty_cycle), // Duty Cycle of the Wave, between 0 and 1023 - scaled to 0 and 100
