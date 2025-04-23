@@ -24,9 +24,11 @@
  *
  **/
 
-module Wrapper (input CLK100MHZ, input BTNU, input button1_short, input button2_short, input button3_short, input button1_long, input button2_long, input button3_long, output reg [15:0] LED, output Servo1, output Servo2, output Servo3);
+module Wrapper (input CLK100MHZ, input BTNU, input button1_short, input button2_short, input button3_short, input button1_long, input button2_long, input button3_long, output reg [15:0] LED, output Servo1, output Servo2, output Servo3, output audioOut, output audioEn);
 
 	wire clock, reset;
+	reg[3:0] tone;
+	reg ena;
 	wire clk_50mhz;
     wire locked;
     assign clock = clk_50mhz;
@@ -46,7 +48,7 @@ module Wrapper (input CLK100MHZ, input BTNU, input button1_short, input button2_
 
 
 	// ADD YOUR MEMORY FILE HERE
-	localparam INSTR_FILE = "threeServo_fixed_timing";
+	localparam INSTR_FILE = "threeServo_audio";
 	
 	// Main Processing Unit
 	processor CPU(.clock(clock), .reset(reset), 
@@ -132,6 +134,11 @@ module Wrapper (input CLK100MHZ, input BTNU, input button1_short, input button2_
         if (memAddr[11:0] == 12'd13 && mwe == 1'd1) begin
             servo3_duty_cycle <= memDataIn[9:0];
         end
+        
+        if (memAddr[11:0] == 12'd20 && mwe == 1'd1) begin
+            tone <= memDataIn[3:0];
+            ena <= (tone == 4'd15) ? 0 : 1;
+        end
 	end
 	
 	// intercepts the real value and forces our own value in
@@ -148,12 +155,15 @@ module Wrapper (input CLK100MHZ, input BTNU, input button1_short, input button2_
     ServoController servoCont1(clk_50mhz, servo1_duty_cycle, Servo1);
     ServoController servoCont2(clk_50mhz, servo2_duty_cycle, Servo2);
     ServoController servoCont3(clk_50mhz, servo3_duty_cycle, Servo3);
+    AudioController audioCont(clk_50mhz, tone, ena, audioOut, audioEn);
     
     always @(posedge clock) begin
 //        if (memAddr[11:0] == 12'd6) begin
 //	       LED[0] <= memDataIn[0];
 //	   end
-        LED[9:0] <= servo3_duty_cycle;
+        LED[3:0] <= tone;
+        LED[15] <= ena;
+        
 	end
     
 endmodule

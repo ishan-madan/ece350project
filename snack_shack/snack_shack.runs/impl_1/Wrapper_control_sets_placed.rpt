@@ -1,0 +1,134 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
+| Date         : Tue Apr 22 20:02:56 2025
+| Host         : P1-02 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file Wrapper_control_sets_placed.rpt
+| Design       : Wrapper
+| Device       : xc7a100t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    56 |
+|    Minimum number of control sets                        |    56 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    92 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    56 |
+| >= 0 to < 4        |     8 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     2 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    43 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              77 |           26 |
+| No           | No                    | Yes                    |               7 |            5 |
+| No           | Yes                   | No                     |               5 |            3 |
+| Yes          | No                    | No                     |             270 |           94 |
+| Yes          | No                    | Yes                    |            1412 |          684 |
+| Yes          | Yes                   | No                     |              81 |           22 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------------+---------------------------------------------+----------------------------------------+------------------+----------------+--------------+
+|    Clock Signal    |                Enable Signal                |            Set/Reset Signal            | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------------+---------------------------------------------+----------------------------------------+------------------+----------------+--------------+
+|  pll/inst/clk_out1 |                                             | BTNU_IBUF                              |                1 |              1 |         1.00 |
+|  pll/inst/clk_out1 | CPU/aluResult_reg/register[1]/read_button_5 |                                        |                1 |              1 |         1.00 |
+|  pll/inst/clk_out1 | CPU/aluResult_reg/register[2]/read_button_1 |                                        |                1 |              1 |         1.00 |
+|  pll/inst/clk_out1 | CPU/aluResult_reg/register[2]/read_button_2 |                                        |                1 |              1 |         1.00 |
+|  pll/inst/clk_out1 | CPU/aluResult_reg/register[2]/read_button_3 |                                        |                1 |              1 |         1.00 |
+|  pll/inst/clk_out1 | CPU/aluResult_reg/register[6]/read_button_6 |                                        |                1 |              1 |         1.00 |
+|  pll/inst/clk_out1 | CPU/aluResult_reg/register[6]/read_button_4 |                                        |                1 |              1 |         1.00 |
+| ~pll/inst/clk_out1 |                                             |                                        |                3 |              3 |         1.00 |
+|  pll/inst/clk_out1 | CPU/aluResult_reg/register[2]/E[0]          |                                        |                1 |              4 |         4.00 |
+|  pll/inst/clk_out1 |                                             | CPU/ex_aluop_reg/register[1]/q_reg_4   |                3 |              5 |         1.67 |
+|  negClock          |                                             | BTNU_IBUF                              |                4 |              6 |         1.50 |
+|  pll/inst/clk_out1 | CPU/md_ALU/mult/busy1_out                   | CPU/ex_aluop_reg/register[1]/SR[0]     |                1 |              6 |         6.00 |
+|  pll/inst/clk_out1 | CPU/ex_aluop_reg/register[1]/q_reg_1        | CPU/ex_mem_excep/register[0]/q_reg_137 |                5 |             13 |         2.60 |
+|  negClock          | CPU/is_MD_busy/q_reg_0                      | CPU/dffe_jr/clr_pipe                   |               14 |             26 |         1.86 |
+|  pll/inst/clk_out1 | CPU/ex_mem_excep/register[0]/busy_reg       | CPU/ex_mem_excep/register[0]/q_reg_35  |                9 |             31 |         3.44 |
+|  pll/inst/clk_out1 | CPU/ex_aluop_reg/register[1]/E[0]           | CPU/ex_mem_excep/register[0]/SR[0]     |                7 |             31 |         4.43 |
+|  negClock          | CPU/md_ALU/mult/en03_out                    | CPU/dffe_jr/clr_pipe                   |               16 |             32 |         2.00 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[7]                     | BTNU_IBUF                              |               13 |             32 |         2.46 |
+|  negClock          | CPU/is_MD_busy/q_reg_0                      | BTNU_IBUF                              |               19 |             32 |         1.68 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[15]                    | BTNU_IBUF                              |               21 |             32 |         1.52 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[17]                    | BTNU_IBUF                              |               15 |             32 |         2.13 |
+|  pll/inst/clk_out1 | CPU/ex_aluop_reg/register[1]/E[0]           |                                        |                8 |             32 |         4.00 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[28]                    | BTNU_IBUF                              |               20 |             32 |         1.60 |
+|  pll/inst/clk_out1 | CPU/ex_mem_excep/register[0]/busy_reg       |                                        |               12 |             32 |         2.67 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[2]                     | BTNU_IBUF                              |               13 |             32 |         2.46 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[13]                    | BTNU_IBUF                              |               14 |             32 |         2.29 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[3]                     | BTNU_IBUF                              |               27 |             32 |         1.19 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[26]                    | BTNU_IBUF                              |               13 |             32 |         2.46 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[9]                     | BTNU_IBUF                              |               13 |             32 |         2.46 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[20]                    | BTNU_IBUF                              |               15 |             32 |         2.13 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[16]                    | BTNU_IBUF                              |               20 |             32 |         1.60 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[23]                    | BTNU_IBUF                              |               11 |             32 |         2.91 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[24]                    | BTNU_IBUF                              |               13 |             32 |         2.46 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[31]                    | BTNU_IBUF                              |               13 |             32 |         2.46 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[18]                    | BTNU_IBUF                              |               14 |             32 |         2.29 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[19]                    | BTNU_IBUF                              |               15 |             32 |         2.13 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[4]                     | BTNU_IBUF                              |               30 |             32 |         1.07 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[1]                     | BTNU_IBUF                              |               15 |             32 |         2.13 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[5]                     | BTNU_IBUF                              |               12 |             32 |         2.67 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[6]                     | BTNU_IBUF                              |               16 |             32 |         2.00 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[11]                    | BTNU_IBUF                              |               19 |             32 |         1.68 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[22]                    | BTNU_IBUF                              |               25 |             32 |         1.28 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[25]                    | BTNU_IBUF                              |               15 |             32 |         2.13 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[27]                    | BTNU_IBUF                              |               23 |             32 |         1.39 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[30]                    | BTNU_IBUF                              |               13 |             32 |         2.46 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[14]                    | BTNU_IBUF                              |               10 |             32 |         3.20 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[29]                    | BTNU_IBUF                              |               11 |             32 |         2.91 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[21]                    | BTNU_IBUF                              |               17 |             32 |         1.88 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[12]                    | BTNU_IBUF                              |               13 |             32 |         2.46 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[8]                     | BTNU_IBUF                              |               11 |             32 |         2.91 |
+|  pll/inst/clk_out1 | RegisterFile/RDandWE[10]                    | BTNU_IBUF                              |               16 |             32 |         2.00 |
+|  pll/inst/clk_out1 | CPU/ex_mem_excep/register[0]/E[0]           |                                        |               16 |             64 |         4.00 |
+|  pll/inst/clk_out1 | CPU/ex_aluop_reg/register[1]/busy_reg_0[0]  |                                        |               27 |             64 |         2.37 |
+|  pll/inst/clk_out1 | CPU/ex_aluop_reg/register[1]/q_reg_1        |                                        |               24 |             68 |         2.83 |
+|  pll/inst/clk_out1 |                                             |                                        |               23 |             74 |         3.22 |
+|  negClock          | CPU/md_ALU/mult/en03_out                    | BTNU_IBUF                              |              139 |            330 |         2.37 |
++--------------------+---------------------------------------------+----------------------------------------+------------------+----------------+--------------+
+
+

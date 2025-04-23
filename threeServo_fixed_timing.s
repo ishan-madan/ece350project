@@ -7,6 +7,8 @@
 # r6 is the duty cycle for servo 1
 # r7 is the duty cycle for servo 2
 # r8 is the duty cycle for servo 3
+# r9 is used for setting tone values
+# r10 is the tone timer
 
 
 # mem address 7 is for servo 1 button
@@ -19,6 +21,8 @@
 # mem address 11 is for servo 1 duty cycle 
 # mem address 12 is for servo 2 duty cycle 
 # mem address 13 is for servo 3 duty cycle 
+
+# mem address 20 is tone
 
 
 
@@ -89,6 +93,15 @@ nop
 nop
 
 servo_3_time_checked:
+# check to see if there is time on the speaker
+bne $r10, $r0, subtract_speaker_time
+nop
+nop
+
+j turn_off_speaker
+
+speaker_time_checked:
+
 
 
 j check_buttons
@@ -191,7 +204,7 @@ nop
 addi $r3, $r1, 1
 nop
 nop
-sll $r3, $r3, 19
+sll $r3, $r3, 16
 nop
 nop
 # 77 used to be 114
@@ -199,6 +212,18 @@ addi $r6, $r0, 59
 nop
 nop
 sw $r6, 11($r0)
+nop
+nop
+addi $r9, $r0, 4
+nop
+nop
+sw $r9, 20($r0)
+nop
+nop
+addi $r10, $r1, 1
+nop
+nop
+sll $r10, $r10, 14
 nop
 nop
 j servo_1_button_checked
@@ -210,7 +235,7 @@ nop
 addi $r4, $r1, 1
 nop
 nop
-sll $r4, $r4, 19
+sll $r4, $r4, 16
 nop
 nop
 # 77 used to be 114
@@ -218,6 +243,18 @@ addi $r7, $r0, 59
 nop
 nop
 sw $r7, 12($r0)
+nop
+nop
+addi $r9, $r0, 4
+nop
+nop
+sw $r9, 20($r0)
+nop
+nop
+addi $r10, $r1, 1
+nop
+nop
+sll $r10, $r10, 14
 nop
 nop
 j servo_2_button_checked
@@ -229,7 +266,7 @@ nop
 addi $r5, $r1, 1
 nop
 nop
-sll $r5, $r5, 19
+sll $r5, $r5, 16
 nop
 nop
 # 77 used to be 114
@@ -237,6 +274,18 @@ addi $r8, $r0, 65
 nop
 nop
 sw $r8, 13($r0)
+nop
+nop
+addi $r9, $r0, 4
+nop
+nop
+sw $r9, 20($r0)
+nop
+nop
+addi $r10, $r1, 1
+nop
+nop
+sll $r10, $r10, 14
 nop
 nop
 j servo_3_button_checked
@@ -254,7 +303,7 @@ nop
 addi $r3, $r1, 1
 nop
 nop
-sll $r3, $r3, 20
+sll $r3, $r3, 17
 nop
 nop
 # 77 used to be 114
@@ -262,6 +311,18 @@ addi $r6, $r0, 59
 nop
 nop
 sw $r6, 11($r0)
+nop
+nop
+addi $r9, $r0, 0
+nop
+nop
+sw $r9, 20($r0)
+nop
+nop
+addi $r10, $r1, 1
+nop
+nop
+sll $r10, $r10, 14
 nop
 nop
 j servo_1_button_checked
@@ -273,7 +334,7 @@ nop
 addi $r4, $r1, 1
 nop
 nop
-sll $r4, $r4, 20
+sll $r4, $r4, 17
 nop
 nop
 # 77 used to be 114
@@ -281,6 +342,18 @@ addi $r7, $r0, 59
 nop
 nop
 sw $r7, 12($r0)
+nop
+nop
+addi $r9, $r0, 0
+nop
+nop
+sw $r9, 20($r0)
+nop
+nop
+addi $r10, $r1, 1
+nop
+nop
+sll $r10, $r10, 14
 nop
 nop
 j servo_2_button_checked
@@ -292,7 +365,7 @@ nop
 addi $r5, $r1, 1
 nop
 nop
-sll $r5, $r5, 20
+sll $r5, $r5, 17
 nop
 nop
 # 77 used to be 114
@@ -300,6 +373,18 @@ addi $r8, $r0, 65
 nop
 nop
 sw $r8, 13($r0)
+nop
+nop
+addi $r9, $r0, 0
+nop
+nop
+sw $r9, 20($r0)
+nop
+nop
+addi $r10, $r1, 1
+nop
+nop
+sll $r10, $r10, 14
 nop
 nop
 j servo_3_button_checked
@@ -346,6 +431,18 @@ nop
 nop
 j servo_3_time_checked
 
+# speaker
+subtract_speaker_time:
+nop
+nop
+addi $r2, $r0, 1
+nop
+nop
+sub $r10, $r10, $r2
+nop
+nop
+j speaker_time_checked
+
 
 
 
@@ -362,6 +459,18 @@ nop
 sw $r6, 11($r0)
 nop
 nop
+addi $r9, $r0, 7
+nop
+nop
+sw $r9, 20($r0)
+nop
+nop
+addi $r10, $r1, 1
+nop
+nop
+sll $r10, $r10, 14
+nop
+nop
 j servo_1_time_checked
 
 # servo 2
@@ -372,6 +481,18 @@ addi $r7, $r0, 40
 nop
 nop
 sw $r7, 12($r0)
+nop
+nop
+addi $r9, $r0, 7
+nop
+nop
+sw $r9, 20($r0)
+nop
+nop
+addi $r10, $r1, 1
+nop
+nop
+sll $r10, $r10, 14
 nop
 nop
 j servo_2_time_checked
@@ -386,4 +507,28 @@ nop
 sw $r8, 13($r0)
 nop
 nop
+addi $r9, $r0, 7
+nop
+nop
+sw $r9, 20($r0)
+nop
+nop
+addi $r10, $r1, 1
+nop
+nop
+sll $r10, $r10, 14
+nop
+nop
 j servo_3_time_checked
+
+# speaker
+turn_off_speaker:
+nop
+nop
+addi $r9, $r0, 15
+nop
+nop
+sw $r9, 20($r0)
+nop
+nop
+j speaker_time_checked

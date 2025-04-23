@@ -1,0 +1,438 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Tue Apr 22 19:59:07 2025
+# Process ID: 24600
+# Current directory: C:/Users/im121/Desktop/ece350project/snack_shack/snack_shack.runs/synth_1
+# Command line: vivado.exe -log Wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Wrapper.tcl
+# Log file: C:/Users/im121/Desktop/ece350project/snack_shack/snack_shack.runs/synth_1/Wrapper.vds
+# Journal file: C:/Users/im121/Desktop/ece350project/snack_shack/snack_shack.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Wrapper.tcl -notrace
+Command: synth_design -top Wrapper -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 6904
+WARNING: [Synth 8-6901] identifier 'EX_isJump' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:52]
+WARNING: [Synth 8-6901] identifier 'EX_isJal' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:52]
+WARNING: [Synth 8-6901] identifier 'EX_isJR' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:52]
+WARNING: [Synth 8-6901] identifier 'EX_branchTaken' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:52]
+WARNING: [Synth 8-6901] identifier 'ID_isBLT' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:56]
+WARNING: [Synth 8-6901] identifier 'ID_isBNE' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:56]
+WARNING: [Synth 8-6901] identifier 'ID_isBex' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:56]
+WARNING: [Synth 8-6901] identifier 'ID_isJR' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:56]
+WARNING: [Synth 8-6901] identifier 'EX_isLW' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:59]
+WARNING: [Synth 8-6901] identifier 'EX_rdExt' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:59]
+WARNING: [Synth 8-6901] identifier 'EX_rdExt' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:60]
+WARNING: [Synth 8-6901] identifier 'EX_rdExt' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:61]
+WARNING: [Synth 8-6901] identifier 'EX_isLW' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:67]
+WARNING: [Synth 8-6901] identifier 'FD_valid' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:67]
+WARNING: [Synth 8-6901] identifier 'FD_isLW' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:67]
+WARNING: [Synth 8-6901] identifier 'ID_isSW' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:67]
+WARNING: [Synth 8-6901] identifier 'MEM_exception_code' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:265]
+WARNING: [Synth 8-6901] identifier 'MEM_exception_code' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:265]
+WARNING: [Synth 8-6901] identifier 'WB_exception_code' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:266]
+WARNING: [Synth 8-6901] identifier 'WB_exception_code' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:266]
+WARNING: [Synth 8-6901] identifier 'MEM_exception_code' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:272]
+WARNING: [Synth 8-6901] identifier 'MEM_exception_code' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:272]
+WARNING: [Synth 8-6901] identifier 'WB_exception_code' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:273]
+WARNING: [Synth 8-6901] identifier 'WB_exception_code' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:273]
+WARNING: [Synth 8-6901] identifier 'MEM_exception_code' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:325]
+WARNING: [Synth 8-6901] identifier 'MEM_exception_code' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:325]
+WARNING: [Synth 8-6901] identifier 'WB_exception_code' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:326]
+WARNING: [Synth 8-6901] identifier 'WB_exception_code' is used before its declaration [C:/Users/im121/Desktop/ece350project/processor.v:326]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1329.148 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Wrapper' [C:/Users/im121/Desktop/ece350project/Wrapper.v:27]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/im121/Desktop/ece350project/snack_shack/snack_shack.runs/synth_1/.Xil/Vivado-24600-P1-02/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [C:/Users/im121/Desktop/ece350project/snack_shack/snack_shack.runs/synth_1/.Xil/Vivado-24600-P1-02/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'processor' [C:/Users/im121/Desktop/ece350project/processor.v:5]
+INFO: [Synth 8-6157] synthesizing module 'CLA_32' [C:/Users/im121/Desktop/ece350project/CLA_32.v:4]
+INFO: [Synth 8-6157] synthesizing module 'CLA_8' [C:/Users/im121/Desktop/ece350project/CLA_8.v:3]
+INFO: [Synth 8-6157] synthesizing module 'gp' [C:/Users/im121/Desktop/ece350project/gp.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'gp' (2#1) [C:/Users/im121/Desktop/ece350project/gp.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'CLA_8' (3#1) [C:/Users/im121/Desktop/ece350project/CLA_8.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'CLA_32' (4#1) [C:/Users/im121/Desktop/ece350project/CLA_32.v:4]
+INFO: [Synth 8-6157] synthesizing module 'dffe_ref' [C:/Users/im121/Desktop/ece350project/dffe_ref.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'dffe_ref' (5#1) [C:/Users/im121/Desktop/ece350project/dffe_ref.v:1]
+INFO: [Synth 8-6157] synthesizing module 'reg32bits' [C:/Users/im121/Desktop/ece350project/reg32bits.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'reg32bits' (6#1) [C:/Users/im121/Desktop/ece350project/reg32bits.v:3]
+INFO: [Synth 8-6157] synthesizing module 'alu' [C:/Users/im121/Desktop/ece350project/alu.v:1]
+INFO: [Synth 8-6157] synthesizing module 'bitwise_and' [C:/Users/im121/Desktop/ece350project/bitwise_and.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'bitwise_and' (7#1) [C:/Users/im121/Desktop/ece350project/bitwise_and.v:2]
+INFO: [Synth 8-6157] synthesizing module 'bitwise_or' [C:/Users/im121/Desktop/ece350project/bitwise_or.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'bitwise_or' (8#1) [C:/Users/im121/Desktop/ece350project/bitwise_or.v:3]
+INFO: [Synth 8-6157] synthesizing module 'SLL' [C:/Users/im121/Desktop/ece350project/SLL.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'SLL' (9#1) [C:/Users/im121/Desktop/ece350project/SLL.v:4]
+INFO: [Synth 8-6157] synthesizing module 'SRA' [C:/Users/im121/Desktop/ece350project/SRA.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'SRA' (10#1) [C:/Users/im121/Desktop/ece350project/SRA.v:4]
+INFO: [Synth 8-6157] synthesizing module 'mux_8' [C:/Users/im121/Desktop/ece350project/mux_8.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux_4' [C:/Users/im121/Desktop/ece350project/mux_4.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux_2' [C:/Users/im121/Desktop/ece350project/mux_2.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mux_2' (11#1) [C:/Users/im121/Desktop/ece350project/mux_2.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mux_4' (12#1) [C:/Users/im121/Desktop/ece350project/mux_4.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mux_8' (13#1) [C:/Users/im121/Desktop/ece350project/mux_8.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (14#1) [C:/Users/im121/Desktop/ece350project/alu.v:1]
+INFO: [Synth 8-6157] synthesizing module 'multdiv' [C:/Users/im121/Desktop/ece350project/multdiv.v:1]
+INFO: [Synth 8-6157] synthesizing module 'multiplier' [C:/Users/im121/Desktop/ece350project/multiplier.v:1]
+WARNING: [Synth 8-6090] variable 'P' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/im121/Desktop/ece350project/multiplier.v:52]
+INFO: [Synth 8-6155] done synthesizing module 'multiplier' (15#1) [C:/Users/im121/Desktop/ece350project/multiplier.v:1]
+INFO: [Synth 8-6157] synthesizing module 'divider' [C:/Users/im121/Desktop/ece350project/divider.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'divider' (16#1) [C:/Users/im121/Desktop/ece350project/divider.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'multdiv' (17#1) [C:/Users/im121/Desktop/ece350project/multdiv.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'processor' (18#1) [C:/Users/im121/Desktop/ece350project/processor.v:5]
+INFO: [Synth 8-6157] synthesizing module 'ROM' [C:/Users/im121/Desktop/ece350project/ROM.v:2]
+	Parameter MEMFILE bound to: 160'b0111010001101000011100100110010101100101010100110110010101110010011101100110111101011111011000010111010101100100011010010110111100101110011011010110010101101101 
+INFO: [Synth 8-3876] $readmem data file 'threeServo_audio.mem' is read successfully [C:/Users/im121/Desktop/ece350project/ROM.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'ROM' (19#1) [C:/Users/im121/Desktop/ece350project/ROM.v:2]
+INFO: [Synth 8-6157] synthesizing module 'regfile' [C:/Users/im121/Desktop/ece350project/regfile.v:4]
+INFO: [Synth 8-6157] synthesizing module 'tsb' [C:/Users/im121/Desktop/ece350project/tsb.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'tsb' (20#1) [C:/Users/im121/Desktop/ece350project/tsb.v:2]
+INFO: [Synth 8-6157] synthesizing module 'decoder_5to32' [C:/Users/im121/Desktop/ece350project/decoder_5to32.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'decoder_5to32' (21#1) [C:/Users/im121/Desktop/ece350project/decoder_5to32.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'regfile' (22#1) [C:/Users/im121/Desktop/ece350project/regfile.v:4]
+INFO: [Synth 8-6157] synthesizing module 'RAM' [C:/Users/im121/Desktop/ece350project/RAM.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'RAM' (23#1) [C:/Users/im121/Desktop/ece350project/RAM.v:2]
+WARNING: [Synth 8-689] width (1) of port connection 'dataOut' does not match port width (32) of module 'RAM' [C:/Users/im121/Desktop/ece350project/Wrapper.v:86]
+INFO: [Synth 8-6157] synthesizing module 'ServoController' [C:/Users/im121/Desktop/ece350project/ServoController.v:1]
+INFO: [Synth 8-6157] synthesizing module 'PWMSerializer' [C:/Users/im121/Desktop/ece350project/PWMSerializer.v:7]
+	Parameter PERIOD_WIDTH_NS bound to: 20000000 - type: integer 
+	Parameter SYS_FREQ_MHZ bound to: 50 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'PWMSerializer' (24#1) [C:/Users/im121/Desktop/ece350project/PWMSerializer.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'ServoController' (25#1) [C:/Users/im121/Desktop/ece350project/ServoController.v:1]
+INFO: [Synth 8-6157] synthesizing module 'AudioController' [C:/Users/im121/Desktop/ece350project/lab9_kit/lab9_kit/AudioController.v:1]
+INFO: [Synth 8-3876] $readmem data file 'FREQs.mem' is read successfully [C:/Users/im121/Desktop/ece350project/lab9_kit/lab9_kit/AudioController.v:17]
+INFO: [Synth 8-6157] synthesizing module 'PWMSerializer__parameterized0' [C:/Users/im121/Desktop/ece350project/PWMSerializer.v:7]
+	Parameter PERIOD_WIDTH_NS bound to: 10 - type: integer 
+	Parameter SYS_FREQ_MHZ bound to: 100 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'PWMSerializer__parameterized0' (25#1) [C:/Users/im121/Desktop/ece350project/PWMSerializer.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'AudioController' (26#1) [C:/Users/im121/Desktop/ece350project/lab9_kit/lab9_kit/AudioController.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'Wrapper' (27#1) [C:/Users/im121/Desktop/ece350project/Wrapper.v:27]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1329.148 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1329.148 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1329.148 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.124 . Memory (MB): peak = 1329.148 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/im121/Desktop/ece350project/snack_shack/snack_shack.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'pll'
+Finished Parsing XDC File [c:/Users/im121/Desktop/ece350project/snack_shack/snack_shack.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'pll'
+Parsing XDC File [C:/Users/im121/Desktop/ece350project/snack_shack/snack_shack.srcs/constrs_1/new/constraints.xdc]
+Finished Parsing XDC File [C:/Users/im121/Desktop/ece350project/snack_shack/snack_shack.srcs/constrs_1/new/constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/im121/Desktop/ece350project/snack_shack/snack_shack.srcs/constrs_1/new/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1425.492 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1425.492 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1425.492 ; gain = 96.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1425.492 ; gain = 96.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  c:/Users/im121/Desktop/ece350project/snack_shack/snack_shack.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  c:/Users/im121/Desktop/ece350project/snack_shack/snack_shack.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property KEEP_HIERARCHY = SOFT for pll. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1425.492 ; gain = 96.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1425.492 ; gain = 96.344
+---------------------------------------------------------------------------------
+INFO: [Synth 8-223] decloning instance 'CPU/pc_adder' (CLA_32) to 'CPU/pc_adder2'
+INFO: [Synth 8-223] decloning instance 'CPU/pc_adder' (CLA_32) to 'CPU/pc_adder1'
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   65 Bit       Adders := 2     
+	   3 Input   64 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 2     
+	   2 Input   20 Bit       Adders := 3     
+	   2 Input    6 Bit       Adders := 2     
++---XORs : 
+	   3 Input      1 Bit         XORs := 128   
+	   2 Input      1 Bit         XORs := 5     
++---Registers : 
+	               65 Bit    Registers := 3     
+	               64 Bit    Registers := 3     
+	               32 Bit    Registers := 3     
+	               26 Bit    Registers := 1     
+	               21 Bit    Registers := 3     
+	               16 Bit    Registers := 1     
+	               10 Bit    Registers := 3     
+	                6 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1865  
++---Multipliers : 
+	              32x32  Multipliers := 1     
++---RAMs : 
+	             128K Bit	(4096 X 32 bit)          RAMs := 1     
++---ROMs : 
+	                    ROMs := 1     
++---Muxes : 
+	   2 Input   65 Bit        Muxes := 4     
+	   3 Input   65 Bit        Muxes := 1     
+	   2 Input   64 Bit        Muxes := 2     
+	   2 Input   32 Bit        Muxes := 64    
+	   2 Input   27 Bit        Muxes := 1     
+	   2 Input   20 Bit        Muxes := 3     
+	   2 Input   17 Bit        Muxes := 1     
+	  17 Input   11 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 2     
+	   3 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 12    
+	   2 Input    3 Bit        Muxes := 1     
+	   4 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 13    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP mult/real_prod0, operation Mode is: A*B.
+DSP Report: operator mult/real_prod0 is absorbed into DSP mult/real_prod0.
+DSP Report: operator mult/real_prod0 is absorbed into DSP mult/real_prod0.
+DSP Report: Generating DSP mult/real_prod_reg, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: register mult/real_prod_reg is absorbed into DSP mult/real_prod_reg.
+DSP Report: operator mult/real_prod0 is absorbed into DSP mult/real_prod_reg.
+DSP Report: operator mult/real_prod0 is absorbed into DSP mult/real_prod_reg.
+DSP Report: Generating DSP mult/real_prod0, operation Mode is: A*B.
+DSP Report: operator mult/real_prod0 is absorbed into DSP mult/real_prod0.
+DSP Report: operator mult/real_prod0 is absorbed into DSP mult/real_prod0.
+DSP Report: Generating DSP mult/real_prod_reg, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: register mult/real_prod_reg is absorbed into DSP mult/real_prod_reg.
+DSP Report: operator mult/real_prod0 is absorbed into DSP mult/real_prod_reg.
+DSP Report: operator mult/real_prod0 is absorbed into DSP mult/real_prod_reg.
+DSP Report: Generating DSP servoCont1/servoSer/lessThan1, operation Mode is: (A:0xf4240)*B2.
+DSP Report: register servo1_duty_cycle_reg is absorbed into DSP servoCont1/servoSer/lessThan1.
+DSP Report: operator servoCont1/servoSer/lessThan1 is absorbed into DSP servoCont1/servoSer/lessThan1.
+DSP Report: Generating DSP servoCont2/servoSer/lessThan1, operation Mode is: (A:0xf4240)*B2.
+DSP Report: register servo2_duty_cycle_reg is absorbed into DSP servoCont2/servoSer/lessThan1.
+DSP Report: operator servoCont2/servoSer/lessThan1 is absorbed into DSP servoCont2/servoSer/lessThan1.
+DSP Report: Generating DSP servoCont3/servoSer/lessThan1, operation Mode is: (A:0xf4240)*B2.
+DSP Report: register servo3_duty_cycle_reg is absorbed into DSP servoCont3/servoSer/lessThan1.
+DSP Report: operator servoCont3/servoSer/lessThan1 is absorbed into DSP servoCont3/servoSer/lessThan1.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1425.492 ; gain = 96.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+---------------------+---------------+----------------+
+|Module Name | RTL Object          | Depth x Width | Implemented As | 
++------------+---------------------+---------------+----------------+
+|Wrapper     | InstMem/dataOut_reg | 4096x26       | Block RAM      | 
++------------+---------------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping Report (see note below)
++------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object              | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Wrapper     | ProcMem/MemoryArray_reg | 4 K x 1(NO_CHANGE)     | W | R |                        |   |   | Port A           | 1      | 0      | 
++------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+DSP: Preliminary Mapping Report (see note below)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|multdiv     | A*B            | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|multdiv     | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|multdiv     | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|multdiv     | (PCIN>>17)+A*B | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|Wrapper     | (A:0xf4240)*B2 | 20     | 10     | -      | -      | 30     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Wrapper     | (A:0xf4240)*B2 | 20     | 10     | -      | -      | 30     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Wrapper     | (A:0xf4240)*B2 | 20     | 10     | -      | -      | 30     | 0    | 1    | -    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1443.828 ; gain = 114.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 1763.352 ; gain = 434.203
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object              | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Wrapper     | ProcMem/MemoryArray_reg | 4 K x 1(NO_CHANGE)     | W | R |                        |   |   | Port A           | 1      | 0      | 
++------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance ProcMem/MemoryArray_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance InstMem/dataOut_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance InstMem/dataOut_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance InstMem/dataOut_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 1767.145 ; gain = 437.996
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 1767.145 ; gain = 437.996
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 1767.145 ; gain = 437.996
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:56 ; elapsed = 00:00:58 . Memory (MB): peak = 1767.145 ; gain = 437.996
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:56 ; elapsed = 00:00:58 . Memory (MB): peak = 1767.145 ; gain = 437.996
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:56 ; elapsed = 00:00:58 . Memory (MB): peak = 1767.145 ; gain = 437.996
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:56 ; elapsed = 00:00:58 . Memory (MB): peak = 1767.145 ; gain = 437.996
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_0     |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |clk_wiz  |     1|
+|2     |BUFG     |     1|
+|3     |CARRY4   |   119|
+|4     |DSP48E1  |     7|
+|7     |LUT1     |   101|
+|8     |LUT2     |   783|
+|9     |LUT3     |   170|
+|10    |LUT4     |   357|
+|11    |LUT5     |   324|
+|12    |LUT6     |  1684|
+|13    |MUXF7    |     8|
+|14    |RAMB18E1 |     1|
+|15    |RAMB36E1 |     3|
+|18    |FDCE     |  1419|
+|19    |FDRE     |   432|
+|20    |FDSE     |     1|
+|21    |IBUF     |     7|
+|22    |OBUF     |    10|
+|23    |OBUFT    |    11|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:56 ; elapsed = 00:00:58 . Memory (MB): peak = 1767.145 ; gain = 437.996
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:49 ; elapsed = 00:00:55 . Memory (MB): peak = 1767.145 ; gain = 341.652
+Synthesis Optimization Complete : Time (s): cpu = 00:00:56 ; elapsed = 00:00:58 . Memory (MB): peak = 1767.145 ; gain = 437.996
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.090 . Memory (MB): peak = 1775.727 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 138 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1779.387 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 8688ac02
+INFO: [Common 17-83] Releasing license: Synthesis
+79 Infos, 30 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:00 ; elapsed = 00:01:03 . Memory (MB): peak = 1779.387 ; gain = 450.238
+INFO: [Common 17-1381] The checkpoint 'C:/Users/im121/Desktop/ece350project/snack_shack/snack_shack.runs/synth_1/Wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Wrapper_utilization_synth.rpt -pb Wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 22 20:00:17 2025...
